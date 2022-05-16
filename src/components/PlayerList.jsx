@@ -21,7 +21,22 @@ export default function PlayerList() {
   return (
     <div>
       <h1>Playerlist</h1>
-      {JSON.stringify(players)}
+      {players.map((player, index) => {
+        return (
+          <p key={index}>
+            {" "}
+            <strong>Firstname: </strong>
+            {player.firstName} <br></br> <strong>Lastname: </strong>
+            {player.lastName} <br></br>
+            <strong>Fotball-club:</strong> {player.club}
+            <br></br>
+            <strong>Position:</strong> {player.position}
+            <br></br>
+            <strong>Year of birth:</strong> {player.yearOfBirth}
+          </p>
+        );
+      })}
+      {/* {JSON.stringify(players)} */}
     </div>
   );
 }
